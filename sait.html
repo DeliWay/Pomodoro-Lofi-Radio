@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro & Lofi Radio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.95em' font-size='80'>🍅</text><text x='45' y='40' font-size='20'>♪</text></svg>">
+</head>
+<body>
+    <div class="radio-container">
+        <div class="radio-controls">
+            <button id="toggleRadio">▶</button>
+            <input type="range" min="0" max="100" value="20" class="volume-slider" id="volumeControl">
+            <div class="radio-info">Lofi Girl</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="timer-display" id="timer">25:00</div>
+        
+        <div class="controls">
+            <button id="startBtn">Старт</button>
+            <button id="pauseBtn">Пауза</button>
+            <button id="resetBtn">Сброс</button>
+            <button id="skipBtn">Пропустить</button>
+        </div>
+        
+        <div class="mode-selector">
+            <button id="workMode" class="mode-btn active">Работа</button>
+            <button id="breakMode" class="mode-btn">Перерыв</button>
+        </div>
+        
+        <div class="pomodoro-info">
+            <p>Сессия: <span id="sessionCount">1</span>/4</p>
+            <p>Режим: <span id="currentMode">Работа</span></p>
+            <p>Следующий: <span id="nextMode">Короткий перерыв</span></p>
+        </div>
+    </div>
+    
+    <!-- Аудио элемент для радио -->
+    <audio id="radio" crossorigin="anonymous"></audio>
+    
+    <!-- Аудио элемент для уведомления -->
+    <audio id="notification"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
